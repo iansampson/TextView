@@ -39,6 +39,7 @@ public struct TextView: View {
         private let textColor: UIColor
         private let backgroundColor: UIColor
         private let lineSpacing: CGFloat
+        private let lineHeightMultiple: CGFloat
         private let contentType: ContentType?
         private let autocorrection: Autocorrection
         private let autocapitalization: Autocapitalization
@@ -56,6 +57,7 @@ public struct TextView: View {
             textColor: UIColor,
             backgroundColor: UIColor,
             lineSpacing: CGFloat,
+            lineHeightMultiple: CGFloat,
             contentType: ContentType?,
             autocorrection: Autocorrection,
             autocapitalization: Autocapitalization,
@@ -73,6 +75,7 @@ public struct TextView: View {
             self.textColor = textColor
             self.backgroundColor = backgroundColor
             self.lineSpacing = lineSpacing
+            self.lineHeightMultiple = lineHeightMultiple
             self.contentType = contentType
             self.autocorrection = autocorrection
             self.autocapitalization = autocapitalization
@@ -110,6 +113,7 @@ public struct TextView: View {
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineSpacing
+            paragraphStyle.lineHeightMultiple = lineHeightMultiple
             textView.typingAttributes = [.paragraphStyle: paragraphStyle]
             
             //context.environmentValues.
@@ -140,6 +144,7 @@ public struct TextView: View {
     private let placeholderColor: Color
     private let backgroundColor: UIColor
     private let lineSpacing: CGFloat
+    private let lineHeightMultiple: CGFloat
     private let contentType: ContentType?
     private let autocorrection: Autocorrection
     private let autocapitalization: Autocapitalization
@@ -161,7 +166,8 @@ public struct TextView: View {
         textColor: UIColor = .label,
         placeholderColor: Color = .init(.placeholderText),
         backgroundColor: UIColor = .clear,
-        lineSpacing: CGFloat = 1, // TODO: Test this value
+        lineSpacing: CGFloat = 0,
+        lineHeightMultiple: CGFloat = 0,
         contentType: ContentType? = nil,
         autocorrection: Autocorrection = .default,
         autocapitalization: Autocapitalization = .sentences,
@@ -184,6 +190,7 @@ public struct TextView: View {
         self.placeholderColor = placeholderColor
         self.backgroundColor = backgroundColor
         self.lineSpacing = lineSpacing
+        self.lineHeightMultiple = lineHeightMultiple
         self.contentType = contentType
         self.autocorrection = autocorrection
         self.autocapitalization = autocapitalization
@@ -207,6 +214,7 @@ public struct TextView: View {
             textColor: textColor,
             backgroundColor: backgroundColor,
             lineSpacing: lineSpacing,
+            lineHeightMultiple: lineHeightMultiple,
             contentType: contentType,
             autocorrection: autocorrection,
             autocapitalization: autocapitalization,
