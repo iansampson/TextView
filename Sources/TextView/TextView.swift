@@ -38,6 +38,7 @@ public struct TextView: View {
         private let font: UIFont
         private let textColor: UIColor
         private let backgroundColor: UIColor
+        private let lineSpacing: CGFloat
         private let contentType: ContentType?
         private let autocorrection: Autocorrection
         private let autocapitalization: Autocapitalization
@@ -71,7 +72,7 @@ public struct TextView: View {
             self.font = font
             self.textColor = textColor
             self.backgroundColor = backgroundColor
-            self.lineSpacing = CGFloat
+            self.lineSpacing = lineSpacing
             self.contentType = contentType
             self.autocorrection = autocorrection
             self.autocapitalization = autocapitalization
